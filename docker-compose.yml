@@ -1,0 +1,26 @@
+version: "3.7"
+services:
+  koonetto_blog_postgres:
+    image: postgres:14.11-alpine3.18
+    container_name: koonetto_blog_postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=${DB_POSTGRES_USER}
+      - POSTGRES_PASSWORD=${DB_POSTGRES_PASSWORD}
+      - POSTGRES_DB=${DB_POSTGRES_NAME}
+    volumes:
+      - koonetto-blog-data-slaves:/var/lib/postgresql/data
+
+  koonetto_blog_redis:
+    image: redis:7.4.0-alpine
+    container_name: koonetto_blog_redis
+    command: redis-server /usr/local/etc/redis/redis.conf
+    ports:
+      - 6379:6379
+    volumes:
+      - ./config/redis.conf:/usr/local/etc/redis/redis.conf
+
+volumes:
+  koonetto-blog-data-slaves:
