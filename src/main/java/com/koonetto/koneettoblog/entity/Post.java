@@ -48,8 +48,15 @@ public class Post implements Serializable {
     )
     private Category category;
 
-    @OneToMany(mappedBy = "post", fetch = FetchType.LAZY)
+    @OneToMany(
+            mappedBy = "post",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
     private List<Comment> comments;
+
+    @Column(name = "comment_count")
+    private Integer commentCount;
 
 
 }

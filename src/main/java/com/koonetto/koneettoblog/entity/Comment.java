@@ -30,7 +30,7 @@ public class Comment implements Serializable {
     @Column(name = "created_at")
     private Long createdAt;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
             name = "post_id",
             referencedColumnName = "id"

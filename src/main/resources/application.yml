@@ -3,9 +3,9 @@ spring:
     name: koneetto-blog
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://${DB_HOST}}:5432/${DB_POSTGRES_NAME}
-    username: ${DB_POSTGRES_USER}
-    password: ${DB_POSTGRES_PASSWORD}
+    url: jdbc:postgresql://localhost:5433/koonetto_blog_postgres
+    username: neko
+    password: miaw
     type: com.zaxxer.hikari.HikariDataSource
     hikari:
       minimum-idle: 10

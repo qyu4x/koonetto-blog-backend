@@ -5,11 +5,11 @@ services:
     container_name: koonetto_blog_postgres
     restart: always
     ports:
-      - 5432:5432
+      - 5433:5432
     environment:
-      - POSTGRES_USER=${DB_POSTGRES_USER}
-      - POSTGRES_PASSWORD=${DB_POSTGRES_PASSWORD}
-      - POSTGRES_DB=${DB_POSTGRES_NAME}
+      - POSTGRES_USER=neko
+      - POSTGRES_PASSWORD=miaw
+      - POSTGRES_DB=koonetto_blog_postgres
     volumes:
       - koonetto-blog-data-slaves:/var/lib/postgresql/data
 
