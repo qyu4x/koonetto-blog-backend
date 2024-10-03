@@ -15,6 +15,7 @@ import java.util.List;
 public class Post implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String title;
