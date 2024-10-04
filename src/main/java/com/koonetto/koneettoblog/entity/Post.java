@@ -56,7 +56,7 @@ public class Post implements Serializable {
     private List<Comment> comments;
 
     @Column(name = "comment_count")
-    private Integer commentCount;
+    private Long commentCount;
 
 
 }
